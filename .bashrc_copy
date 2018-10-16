@@ -118,5 +118,6 @@ fi
 git -C ~/Shell pull
 git -C ~/wifistuff pull
 
-python3 ~/Shell/shell_start.py
+#python3 ~/Shell/shell_start.py
+python3 ~/Shell/shell_start_arm.py
 
