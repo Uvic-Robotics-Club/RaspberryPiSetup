@@ -2,13 +2,19 @@ This guide will tell you everything you need to know to get a rover brain auto-p
 
 First, you'll need Wi-Fi working. Consult readme_wifi.txt for a walkthrough.
 
-Getting things to run on startup in Linux is straightforward. Just add the desired commands to the .bashrc file, which should exist in the home directory (~). The .bashrc file is hidden, but it's there (ls -a will flush it out).
+Getting things to run on startup in Linux is straightforward. Just add the desired commands to the crontab. To edit the crontab, simply enter the command 'crontab -e'. This works regardless of your current directory. If you're working with a new machine, you'll be prompted to pick your favourite text editor. I already set the default on Greg's Pi to Vim, though. *evil laughter*
+
+Here's how to format a crontab line to run on boot.
+
+@reboot ~/nameofscript.sh &
+
+The '&' ensures that it runs as a background process, allowing other boot processes to run normally.
 
 You'll want to install Git. sudo apt-get install git
 
 Make new folders in ~ to pull the files into. Then follow these instructions for setting up the repo: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
 
-Then in your .bashrc you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos.
+Then in your startup script you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos.
 
 For the joystick to work, you'll need to install pygame. Follow the top answer at https://askubuntu.com/questions/401342/how-to-download-pygame-in-python3-3
 
