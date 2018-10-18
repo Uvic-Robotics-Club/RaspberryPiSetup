@@ -115,10 +115,10 @@ fi
 
 ### Rover brain startup stuff!
 
-if git -C ~/Shell pull; then
-	echo "Shell repo pulled successfully."
+if git -C ~/Scheduler pull; then
+	echo "Scheduler repo pulled successfully."
 else
-	echo "Error pulling Shell repo." 1>&2
+	echo "Error pulling Scheduler repo." 1>&2
 fi
 if git -C ~/wifistuff pull; then
 	echo "RaspberryPiSetup repo pulled successfully."
@@ -126,6 +126,6 @@ else
 	echo "Error pulling RaspberryPiSetup repo." 1>&2
 fi
 
-#python3 ~/Shell/shell_start.py
-python3 ~/Shell/shell_start_arm.py
+#python3 ~/Scheduler/scheduler_start.py
+python3 ~/Scheduler/scheduler_start_arm.py
 
