@@ -8,3 +8,11 @@ network = {
   psk="Password"
   id_str="NetworkNickname"
 }
+
+If your Wi-Fi network has no password, do this instead:
+
+network = {
+  ssid="WifiNetworkName"
+  key_mgmt=NONE
+  id_str="NetworkNickname"
+}
