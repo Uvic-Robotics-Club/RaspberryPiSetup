@@ -6,9 +6,9 @@ Getting things to run on startup in Linux is straightforward. Just add the desir
 
 You'll want to install Git. sudo apt-get install git
 
-Make new folders in ~ to pull the files into. Then follow these instructions for setting up the repo: https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+You'll want to clone the Scheduler repo into the root of storage.
 
-Then in your startup script you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos.
+Then in your .bashrc startup script you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos. See .bashrc_copy.
 
 BUT .bashrc runs AFTER LOGIN! We can't have the rover requiring manual login every time the thing boots - we want it to run without any help. To make the Pi log in automatically, you'll have to use the Raspberry Pi Software Configuration Tool. Follow these steps and the Pi will be logging in without help:
 sudo raspi-config
