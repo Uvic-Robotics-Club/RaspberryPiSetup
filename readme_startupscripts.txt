@@ -6,7 +6,7 @@ Getting things to run on startup in Linux is straightforward. Just add the desir
 
 You'll want to install Git. sudo apt-get install git
 
-You'll want to clone the Scheduler repo into the root of storage.
+You'll want to clone the Scheduler repo into the root of storage. Also, get the contents of this RaspberryPiSetup repo copied into a folder named wifistuff
 
 Then in your .bashrc startup script you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos. See the last bunch of lines of .bashrc_copy.
 
