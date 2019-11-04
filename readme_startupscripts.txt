@@ -8,7 +8,7 @@ You'll want to install Git. sudo apt-get install git
 
 You'll want to clone the Scheduler repo into the root of storage.
 
-Then in your .bashrc startup script you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos. See .bashrc_copy.
+Then in your .bashrc startup script you can add the commands "git -C ~/[path] pull" for every GitHub repo you are using. At the time of this writing, that means the Shell and RaspberryPiSetup repos. See the last bunch of lines of .bashrc_copy.
 
 BUT .bashrc runs AFTER LOGIN! We can't have the rover requiring manual login every time the thing boots - we want it to run without any help. To make the Pi log in automatically, you'll have to use the Raspberry Pi Software Configuration Tool. Follow these steps and the Pi will be logging in without help:
 sudo raspi-config
