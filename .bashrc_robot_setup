@@ -1,0 +1,32 @@
+### Script that helps setup environment for robot operation. Located in separate file from .bashrc as this 
+### increases usability in terms of sourcing this file elsewhere when needed
+
+
+### Ask the user if WiFi needs to be setup. As opposed to assuming yes everytime, which 
+### will cause a continuous system reboot 
+
+while true; do 
+	read -p "Do you wish to configure Wifi settings (Y/[else])?" yn
+	case $yn in 
+	    [Y]*  ) /bin/bash wifistuff/wifisetup.sh; sudo reboot;	
+	esac 
+	break
+done 
+
+echo "Completed WiFi settings setup"
+
+### Rover brain startup stuff!
+
+if git -C ~/Scheduler pull; then
+	echo "Scheduler repo pulled successfully."
+else
+	echo "Error pulling Scheduler repo." 1>&2
+fi
+if git -C ~/wifistuff pull; then
+	echo "RaspberryPiSetup repo pulled successfully."
+else
+	echo "Error pulling RaspberryPiSetup repo." 1>&2
+fi
+
+#python3 ~/Scheduler/scheduler_start.py
+python3 ~/Scheduler/scheduler_start_arm.py
