@@ -5,6 +5,7 @@
 declare -r scheduler_repo_link="https://github.com/Uvic-Robotics-Club/Scheduler.git"
 declare -r rpi_setup_repo_link="https://github.com/Uvic-Robotics-Club/RaspberryPiSetup.git"
 
+# Determine command to run if the Scheduler/ directory exists or not
 if [ ! -d "./Scheduler/" ]
 then
    scheduler_pull_command="git clone ${scheduler_repo_link}"
@@ -12,6 +13,7 @@ else
    scheduler_pull_command="git -C ./Scheduler pull"
 fi 
 
+# Run git command
 if ${scheduler_pull_command} 
 then
 	echo "Scheduler repo pulled successfully."
@@ -19,6 +21,7 @@ else
 	echo "Error pulling Scheduler repo." 1>&2
 fi  
 
+# Determine command to run if the RaspberryPiSetup/ directory exists or not
 if [ ! -d "./RaspberryPiSetup" ]
 then
     rpi_setup_pull_command="git clone ${rpi_setup_repo_link}" 
@@ -26,6 +29,7 @@ else
     rpi_setup_pull_command="git -C ./RaspberryPiSetup pull"
 fi 
 
+# Run git command
 if ${rpi_setup_pull_command} 
 then
 	echo "RaspberryPiSetup repo pulled successfully."
