@@ -16,3 +16,12 @@ network = {
   key_mgmt=NONE
   id_str="NetworkNickname"
 }
+
+NOTE: After updating the network settings as described above, it is likely that 
+when `wpa_supplicant` is run after saving those changes, an error will occur that 
+prompts you to delete certain files, or modify a file so that changing networks 
+is possible. 
+
+If that happens, follow the instructions. Regardless, once the Pi has started up 
+once successfully on a newly configured network, the errors will not persist and 
+the Pi can be restarted without any network issues.

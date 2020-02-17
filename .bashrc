@@ -112,20 +112,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-### Rover brain startup stuff!
-
-if git -C ~/Scheduler pull; then
-	echo "Scheduler repo pulled successfully."
-else
-	echo "Error pulling Scheduler repo." 1>&2
-fi
-if git -C ~/wifistuff pull; then
-	echo "RaspberryPiSetup repo pulled successfully."
-else
-	echo "Error pulling RaspberryPiSetup repo." 1>&2
-fi
-
-#python3 ~/Scheduler/scheduler_start.py
-python3 ~/Scheduler/scheduler_start_arm.py
-
+# Source the robot setup script. Runs everytime at startup, and everytime a new terminal is opened
+source .bashrc_robot_setup
